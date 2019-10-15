@@ -1,0 +1,37 @@
+body {
+  background: #f2f2f2;
+  font-family: 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', sans-serif;
+}
+
+/* 覆盖 CodeMirror 默认的字体 */
+.CodeMirror {
+  font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  height: auto;
+}
+
+main {
+  /*display: flex;*/
+  padding: 10px;
+}
+
+main .lin-canvas-container {
+  float: left;
+  min-width: 400px;
+  margin-left: 4px;
+  border: 1px solid #eee;
+}
+
+main .lin-code-container {
+  float: left;
+  min-width: 400px;
+  /*width: calc(100% - 820px);*/
+  /*margin: 0 0 0 0px;*/
+}
+
+main .lin-button-block {
+  width: 100%;
+}
+
+#id-canvas {
+  background: white;
+}

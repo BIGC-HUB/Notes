@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)http://vip.cocode.cc/arena -->
+<html lang="en" class="hb-loaded">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title>地下竞技场</title>
+    <link rel="stylesheet" href="./地下竞技场_files/pure-min.css" />
+    <link rel="stylesheet" href="./地下竞技场_files/codemirror.css" />
+    <link rel="stylesheet" href="./地下竞技场_files/material.css" />
+    <link rel="stylesheet" href="./地下竞技场_files/turtle.css" />
+    <link rel="stylesheet" href="./地下竞技场_files/gua-basic.css" />
+
+    <script src="./地下竞技场_files/jquery-3.0.0.min.js.下载"></script>
+    <script src="./地下竞技场_files/codemirror.js.下载"></script>
+    <script src="./地下竞技场_files/javascript.js.下载"></script>
+    <script src="./地下竞技场_files/turtle.js.下载"></script>
+    <script src="./地下竞技场_files/turtleMain.js.下载"></script>
+  </head>
+
+  <body huaban_collector_injected="true">
+    <nav>
+      <a class="gua-nav-link ">首页</a>
+      <a class="gua-nav-link">更新公告</a>
+      <a class="gua-nav-link">反馈收集</a>
+      <a class="gua-nav-link">豪华储瓜间</a>
+      <a class="gua-nav-link gua-active">地下竞技场</a>
+      <a class="gua-nav-link">所有提问</a>
+      <a class="gua-nav-link gua-right">
+        个人中心
+      </a>
+    </nav>
+    <main>
+      <section class="lin-code-container">
+        <!-- 多点回车撑开编辑器 -->
+        <textarea id="code-mirror" style="display: none;">
+forward(100)
+right(90)
+
+
+
+
+
+
+
+
+
+
+            </textarea
+        >
+        <div class="CodeMirror cm-s-material">
+          <div
+            style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 33px;"
+          >
+            <textarea
+              autocorrect="off"
+              autocapitalize="off"
+              spellcheck="false"
+              style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;"
+              tabindex="0"
+            ></textarea
+          ></div>
+          <div class="CodeMirror-vscrollbar" cm-not-content="true">
+            <div style="min-width: 1px; height: 0px;"></div>
+          </div>
+          <div class="CodeMirror-hscrollbar" cm-not-content="true">
+            <div style="height: 100%; min-height: 1px; width: 0px;"></div>
+          </div>
+          <div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div>
+          <div class="CodeMirror-gutter-filler" cm-not-content="true"></div>
+          <div class="CodeMirror-scroll" tabindex="-1">
+            <div
+              style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 251px;"
+            >
+            </div>
+            <div class="CodeMirror-gutters" style="height: 264px;">
+              <div
+                class="CodeMirror-gutter CodeMirror-linenumbers"
+                style="width: 29px;"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div class="lin-control-blocks">
+          <button
+            id="button-run"
+            class="pure-button pure-button-primary lin-button-block"
+            >运行代码</button
+          >
+        </div>
+      </section>
+      <section class="lin-canvas-container">
+        <canvas id="id-canvas" width="500" height="500"></canvas>
+      </section>
+    </main>
+    <script>
+      let log = function() {
+        console.log.bind(console, '🐸')
+      }
+      //定义自己的log很重要 enSure增强进化版
+      let ensure = function(def, result, message) {
+        if (JSON.stringify(def) !== JSON.stringify(result)) {
+          log('异常————————————> ', message)
+          log('def    =', def, '\nresult =', result)
+        }
+      }
+    </script>
+
+    <audio controls="controls" style="display: none;"></audio>
+  </body>
+  <style type="text/css">
+    #yddContainer {
+      display: block;
+      font-family: Microsoft YaHei;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      top: -4px;
+      left: -4px;
+      font-size: 12px;
+      border: 1px solid;
+    }
+
+    #yddTop {
+      display: block;
+      height: 22px;
+    }
+
+    #yddTopBorderlr {
+      display: block;
+      position: static;
+      height: 17px;
+      padding: 2px 28px;
+      line-height: 17px;
+      font-size: 12px;
+      color: #5079bb;
+      font-weight: bold;
+      border-style: none solid;
+      border-width: 1px;
+    }
+
+    #yddTopBorderlr .ydd-sp {
+      position: absolute;
+      top: 2px;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .ydd-icon {
+      left: 5px;
+      width: 17px;
+      padding: 0px 0px 0px 0px;
+      padding-top: 17px;
+      background-position: -16px -44px;
+    }
+
+    .ydd-close {
+      right: 5px;
+      width: 16px;
+      padding-top: 16px;
+      background-position: left -44px;
+    }
+
+    #yddKeyTitle {
+      float: left;
+      text-decoration: none;
+    }
+
+    #yddMiddle {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .ydd-tabs {
+      display: block;
+      margin: 5px 0;
+      padding: 0 5px;
+      height: 18px;
+      border-bottom: 1px solid;
+    }
+
+    .ydd-tab {
+      display: block;
+      float: left;
+      height: 18px;
+      margin: 0 5px -1px 0;
+      padding: 0 4px;
+      line-height: 18px;
+      border: 1px solid;
+      border-bottom: none;
+    }
+
+    .ydd-trans-container {
+      display: block;
+      line-height: 160%;
+    }
+
+    .ydd-trans-container a {
+      text-decoration: none;
+    }
+
+    #yddBottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 22px;
+      line-height: 22px;
+      overflow: hidden;
+      background-position: left -22px;
+    }
+
+    .ydd-padding010 {
+      padding: 0 10px;
+    }
+
+    #yddWrapper {
+      color: #252525;
+      z-index: 10001;
+      background: url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);
+    }
+
+    #yddContainer {
+      background: #fff;
+      border-color: #4b7598;
+    }
+
+    #yddTopBorderlr {
+      border-color: #f0f8fc;
+    }
+
+    #yddWrapper .ydd-sp {
+      background-image: url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png);
+    }
+
+    #yddWrapper a,
+    #yddWrapper a:hover,
+    #yddWrapper a:visited {
+      color: #50799b;
+    }
+
+    #yddWrapper .ydd-tabs {
+      color: #959595;
+    }
+
+    .ydd-tabs,
+    .ydd-tab {
+      background: #fff;
+      border-color: #d5e7f3;
+    }
+
+    #yddBottom {
+      color: #363636;
+    }
+
+    #yddWrapper {
+      min-width: 250px;
+      max-width: 400px;
+    }
+  </style>
+</html>
